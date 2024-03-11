@@ -75,8 +75,11 @@ def imprimir_registro_por_id(registros, id):
         print("ID não encontrado.")
 
 def imprimir_registros_ordenados(registros):
-    for registro in sorted(registros, key=lambda x: x[0]):
-        print(registro)
+    for i, registro in enumerate(sorted(registros, key=lambda x: x[0])):
+        print(f"ID: {i}")
+        for j, campo in enumerate(registro):
+            print(f"{j + 1}. {campo}")
+        print("-" * 20)
 
 def remover_registro(registros, id):
     if id < len(registros):
